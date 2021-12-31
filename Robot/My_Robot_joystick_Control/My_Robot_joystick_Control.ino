@@ -4,7 +4,7 @@ Servo MyServo_gripper;
 Servo MyServo_left;
 Servo MyServo_right;
 
-//int Base_angle = 90;
+int Base_angle = 90;
 //int Gripper_angle =;
 int RM_angle = 135;
 int LM_angle = 30;
@@ -25,22 +25,27 @@ void loop() {
   int analogVal_xr = analogRead(A2);
   int analogVal_yr = analogRead(A3);
 
-  if (analogVal_xl < 340) RM_angle -=2.8125;
-  else if (analogVal_xl > 680) RM_angle +=2.8125;
-  RM_angle = min(180, max(90,RM_angle));
+  if (analogVal_xl < 340) RM_angle -= 2.8125;
+  else if (analogVal_xl > 680) RM_angle += 2.8125;
+  RM_angle = min(180, max(90, RM_angle));
   MyServo_right.write(RM_angle);
 
-  if (analogVal_xr < 340) LM_angle -=2.8125;
-  else if (analogVal_xr > 680) LM_angle +=2.8125;
-  LM_angle = min(100, max(0,LM_angle));
+  if (analogVal_xr < 340) LM_angle -= 2.8125;
+  else if (analogVal_xr > 680) LM_angle += 2.8125;
+  LM_angle = min(100, max(0, LM_angle));
   MyServo_left.write(LM_angle);
 
+  if (analogVal_yl < 340) Base_angle -= 2.8125;
+  else if (analogVal_yl > 680) Base_angle += 2.8125;
+  Base_angle = min(180, max(0, Base_angle));
+  MyServo_Base.write(Base_angle);
 
-  Serial.print("analogVal_xr: ");
-  Serial.println(analogVal_xr);
+
+  Serial.print("analogVal_yl: ");
+  Serial.println(analogVal_yl);
   Serial.println( );
-  Serial.print("LM_angle: ");
-  Serial.println(LM_angle);
+  Serial.print("Base_angle: ");
+  Serial.println(Base_angle);
 
 
 
