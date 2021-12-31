@@ -7,16 +7,16 @@ Servo MyServo_right;
 void setup() {
   MyServo_left.attach(5);
   MyServo_right.attach(3);
-  MyServo_gripper.attach(8);
-  MyServo_Base.attach(7);
+  MyServo_gripper.attach(7);
+  MyServo_Base.attach(8);
   Serial.begin(9600);
 
 }
 
 void loop() {
-  //MyServo_gripper.write(Angle_gripper);
-  //MyServo_Base.write(Angle_base);
+  MyServo_gripper.write(90);
+//  MyServo_Base.write(0);
 
-  MyServo_right.write(180);
-  MyServo_left.write(0);
+//  MyServo_right.write(180);
+//  MyServo_left.write(30);
 }
