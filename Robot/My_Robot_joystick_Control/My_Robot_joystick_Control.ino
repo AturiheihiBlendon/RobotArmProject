@@ -48,6 +48,20 @@ void loop() {
   Serial.println(Base_angle);
 
 
+  /*Serial.print("analogVal_xr: ");
+  Serial.println(analogVal_xr);
+  Serial.println( );
+  Serial.print("LM_angle: ");
+  Serial.println(LM_angle);
+
+
+  Serial.print("analogVal_xr: ");
+  Serial.println(analogVal_xr);
+  Serial.println( );
+  Serial.print("RM_angle: ");
+  Serial.println(RM_angle);
+*/
+
 
 
 }
