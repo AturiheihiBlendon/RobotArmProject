@@ -1,4 +1,4 @@
-/*#include <Servo.h>
+#include <Servo.h>
 Servo MyServo_Base;
 Servo MyServo_gripper;
 Servo MyServo_left;
@@ -19,4 +19,4 @@ void loop() {
 
   MyServo_right.write(180);
   MyServo_left.write(0);
-}*/
+}
